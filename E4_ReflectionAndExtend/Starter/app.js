@@ -14,8 +14,26 @@ var john = {
 // don't do this EVER! for demo purposes only!!!
 john.__proto__ = person;
 
+for (var prop in john){
+    if(john.hasOwnProperty(prop)){
+        console.log(prop +": "+john[prop]);
 
+    }
+}
+var jane = {
+    address: "111 main st.",
+    getFormalFullName: function(){
+        return this.firstname + "!";
+    }
+}
+var jim = {
+    getFirstName: function(){
+        return this.firstname;//he forgot to this
+    }
+}
+_.extend(john,jane,jim);
 
+console.log(john);
 
 
 
